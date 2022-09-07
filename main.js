@@ -1,7 +1,9 @@
 require('dotenv').config();
+require('./deploy-commands.js');
 const { token } = process.env;
-const { Client, Collection, GatewayIntentBits, ActivityType, Partials } = require('discord.js');
-const fs = require('fs');
+const { Client, Collection, GatewayIntentBits, ActivityType, Partials, InteractionType } = require('discord.js');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const client = new Client({ 
     intents: [
@@ -18,52 +20,56 @@ const client = new Client({
     ]
 });
 
+
 client.commands = new Collection();
-const commandFiles = fs.readdirSync(`./commands`).filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.name, command);
+const commandsPath = path.join(__dirname, 'commands');
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const filePath = path.join(commandsPath, file);
+	const command = require(filePath);
+	client.commands.set(command.data.name, command);
 }
 
-const prefix = ';';
+client.on('interactionCreate', async interaction => {
+	if (interaction.isChatInputCommand()) {
+        const command = interaction.client.commands.get(interaction.commandName);
+        console.log(command);
+        if (!command) return;
 
+        try {
+            await command.execute(interaction);
+        } catch (error) {
+            console.error(error);
+            await interaction.reply({ content: 'There was an error while executing a Slash command!', ephemeral: true });
+        }
+    } else if (interaction.type == InteractionType.ApplicationCommandAutocomplete) {
+        const command = interaction.client.commands.get(interaction.commandName);
+        if (!command) return;
+
+        try {
+            await command.autocomplete(interaction, client);
+        } catch (error) {
+            console.error(error);
+            await interaction.reply({ content: 'There was an error while executing an Autocomplete command!', ephemeral: true });
+        }
+    }
+});
+
+const blacklist = ["nigger"];
 
 client.on('messageCreate', message => {
-    if(!message.content.startsWith(prefix) || message.author.bot){
-        return;
-    } 
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
-    console.log(message.content);
-
-    switch (command) {
-        case 'ping':
-            client.commands.get('ping').execute(message, args);
+    for(let word of blacklist){
+        if(message.content.includes(word)){
+            const warning = message.guild.roles.cache.find(r => r.name === "Warning");
+            const channel = '1012464105866674377'
+            message.delete();
+            message.author.send("\`THAT LANGUAGE IS NOT APPRECIATED IN OUR SERVER.\`");
+            message.member.roles.add(warning);
+            client.channels.cache.get(channel).send("\`" + message.author.username + " SAID A BLACKLISTED WORD. THEY HAVE BEEN WARNED\`");
             break;
-        case 'rs':
-            client.commands.get('rs').execute(message, args);
-            break;
-        case 'help':
-            client.commands.get('help').execute(message, args);
-            break;
-        case 'vote':
-            if((message.member.roles.cache.find(r => r.name === "retard") || message.member.roles.cache.find(r => r.name === "Swood Dood")) && !message.author.bot){
-                client.commands.get('vote').execute(message, args);
-            }
-            break;
-        case 'purge':
-            if((message.member.roles.cache.find(r => r.name === "retard") || message.member.roles.cache.find(r => r.name === "Swood Dood")) && !message.author.bot){
-                client.commands.get('purge').execute(message, args, client);
-            }
-            break;
-        case 'frames':
-            client.commands.get('frames').execute(message, args, client);
-            break;
-        default:
-            message.channel.send('\`INVALID COMMAND. USE ;help TO RECEIVE A LIST OF COMMANDS\`');
-            break;
+        }
     }
-
 })
 
 client.on('ready', () => {
