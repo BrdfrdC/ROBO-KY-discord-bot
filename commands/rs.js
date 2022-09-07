@@ -1,32 +1,43 @@
-module.exports = {
-    name: 'rs',
-    description: 'randomly selects from a list of lists',
-    execute(message, args){
-        if(!args[0]){
-            message.channel.send(`\`INVALID ARGUMENT! VALID ARGUMENTS ARE: Valorant, Strive, LoL\``);
-            return;
-        }
+const { SlashCommandBuilder } = require('discord.js');
 
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName('rs')
+        .setDescription('RANDOMLY SELECTS A CHARACTER')
+        .addStringOption(option =>
+            option.setName('game_name')
+                .setDescription('THE GAME YOU WANT TO SELECT FROM')
+                .setRequired(true)
+                .setAutocomplete(true)),
+    async autocomplete(interaction, client){
+        const focusedValue = interaction.options.getFocused();
+		const choices = ["Valorant", "Guilty Gear Strive", "League of Legends"];
+		const filtered = choices.filter(choice => choice.startsWith(focusedValue));
+		await interaction.respond(
+			filtered.map(choice => ({ name: choice, value: choice })),
+		);
+    },
+    async execute(interaction, client){
         let characters = [];
         let random = 0;
-        switch (args[0].toLowerCase()){
-            case `valorant`:
+        const gameName = interaction.options.getString('game_name');
+        switch (gameName){
+            case `Valorant`:
                 characters = ["Brimstone", "Phoenix", "Sage", "Sova", "Viper", "Cypher",
                 "Reyna", "Killjoy", "Breach", "Omen", "Jett", "Raze", "Skye", "Yoru", "Astra",
                 "KAY/O", "Chamber", "Neon", "Fade"];
                 random = Math.floor(Math.random() * characters.length);
-                message.channel.send(`\`YOUR RANDOMLY SELECTED CHARACTER IS: ${characters[random]}\``);
+                interaction.reply(`\`YOUR RANDOMLY SELECTED CHARACTER IS: ${characters[random]}\``);
                 break;
-            case `strive`:
+            case `Guilty Gear Strive`:
                 characters = ["Sol Badguy", "Ky Kiske", "May", "Axl Low", "Chipp Zanuff", "Potemkin",
                 "ZATO=1", "Ramlethal Valentine", "Leo Whitefang", "Nagoriyuki", "Giovanna",
                 "Anji Mito", "I-No", "Goldlewis Dickinson", "Jack-O' Valentine", "Happy Chaos",
                 "Baiken", "Testament", "Bridget"];
                 random = Math.floor(Math.random() * characters.length);
-                message.channel.send(`\`YOUR RANDOMLY SELECTED CHARACTER IS: ${characters[random]}\``);
+                interaction.reply(`\`YOUR RANDOMLY SELECTED CHARACTER IS: ${characters[random]}\``);
                 break;
-            case 'lol':
-            case 'league':
+            case 'League of Legends':
                 characters = ['Aatrox','Ahri','Akali','Akshan','Alistar','Amumu','Anivia','Annie',
                 'Aphelios','Ashe','Aurelion Sol','Azir','Bard','Bel’Veth','Blitzcrank','Brand','Braum',
                 'Caitlyn','Camille','Cassiopeia','Cho’Gath','Corki','Darius','Diana','Dr. Mundo',
@@ -46,7 +57,10 @@ module.exports = {
                 'Viktor','Vladimir','Volibear','Warwick','Wukong','Xayah','Xerath','Xin Zhao','Yasuo'
                 ,'Yone','Yorick','Yuumi','Zac','Zed','Zeri','Ziggs','Zilean','Zoe','Zyra',];
                 random = Math.floor(Math.random() * characters.length);
-                message.channel.send(`\`YOUR RANDOMLY SELECTED CHARACTER IS: ${characters[random]}\``);
+                interaction.reply(`\`YOUR RANDOMLY SELECTED CHARACTER IS: ${characters[random]}\``);
+                break;
+            default:
+                interaction.reply(`\`THAT'S NOT A GAME!\``);
                 break;
         }
     }
