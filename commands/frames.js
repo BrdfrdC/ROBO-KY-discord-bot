@@ -15,32 +15,65 @@ module.exports = {
     .addStringOption(option =>
       option.setName('move_name')
           .setDescription('THE NAME OF THE MOVE')
-          .setRequired(true)),
+          .setRequired(true)
+          .setAutocomplete(true)),
   
   async autocomplete(interaction, client){
-      const focusedValue = interaction.options.getFocused();
-      const choices = ["Sol Badguy", "Ky Kiske", "May", "Axl Low", "Chipp Zanuff",
-      "Potemkin", "Faust", "Millia Rage", "Zato=1", "Ramlethal Valentine", 
-      "Leo Whitefang", "Nagoriyuki", "Giovanna", "Anji Mito", "I-No", "Goldlewis Dickinson",
-      "Jack-O' Valentine", "Happy Chaos", "Baiken", "Testament", "Bridget"];
-      const filtered = choices.filter(choice => choice.startsWith(focusedValue));
+      const focusedOption = interaction.options.getFocused(true);
+      let choices;
+      let filtered;
+
+      charBreak: if(focusedOption.name == 'character_name'){
+        choices = ["Sol Badguy", "Ky Kiske", "May", "Axl Low", "Chipp Zanuff",
+        "Potemkin", "Faust", "Millia Rage", "Zato=1", "Ramlethal Valentine", 
+        "Leo Whitefang", "Nagoriyuki", "Giovanna", "Anji Mito", "I-No", "Goldlewis Dickinson",
+        "Jack-O' Valentine", "Happy Chaos", "Baiken", "Testament", "Bridget"];
+        filtered = choices.filter(choice => choice.startsWith(focusedOption.value));
+        if(filtered == []) {
+          filtered = ["THAT'S NOT A CHARACTER DIPSHIT!"];
+          break charBreak;
+        }
+      }
+      
+      moveBreak: if(focusedOption.name == 'move_name'){
+        choices = [];
+        if(!frameDataLibrary[interaction.options.getString('character_name')]){
+          filtered = ["THAT'S NOT A CHARACTER! DELETE THE COMMAND AND TRY AGAIN"];
+          break moveBreak;
+        }
+        const characterMoves = frameDataLibrary[interaction.options.getString('character_name')]["moves"];
+        let counter = 0;
+        for (const move in characterMoves) {
+          choices.push(characterMoves[move].name);
+        }
+        filtered = choices.filter(choice => choice.startsWith(focusedOption.value)).slice(0, 25);
+      }
+      console.log(filtered)
       await interaction.respond(
-        filtered.map(choice => ({ name: choice, value: choice })),
-      );
+        filtered.map(choice => ({ name: choice, value: choice }))
+    );
   },
   
   async execute(interaction, client){
     const charName = interaction.options.getString('character_name');
-    const moveName = 'a' + interaction.options.getString('move_name')
-    .replace('.','').replace('[','').replace(']','')
-    .replace('>','').replace('~','');
-    
-    if(!frameDataLibrary[charName] || !frameDataLibrary[charName][moveName]){
-      await interaction.reply(`\`\`\`INVALID MOVE NAME! I'M A ROBOT AND I ONLY UNDERSTAND NUMPAD NOTATION\`\`\``)
+    const moveName = interaction.options.getString('move_name');
+
+    if(!frameDataLibrary[charName] || !frameDataLibrary[charName]["moves"][moveName]){
+      await interaction.reply({ content: '\`INVALID CHARACTER/MOVE NAME! HOW DID YOU MESS UP?! I HAVE AUTOCOMPLETE!\`', ephemeral: true});
       return;
     }
 
-    const moveInfo = frameDataLibrary[charName][moveName]["info"].split('\t');
+    const allMoves = frameDataLibrary[charName]["moves"];
+    let moveInfo;
+    let moveObject;
+
+    for (const move in allMoves) {
+      if(allMoves[move].name === moveName) {
+        moveInfo = frameDataLibrary[charName]["moves"][move]["info"].split('\t');
+        moveObject = move;
+      }
+    }
+    
     const x = [{ name: '**Startup**', value: moveInfo[0], inline: true },
     { name: '**Active**', value: moveInfo[1], inline: true },
     { name: '**Recovery**', value: moveInfo[2], inline: true },
@@ -54,12 +87,12 @@ module.exports = {
 
     const embedMessage = new EmbedBuilder()
       .setTitle(frameDataLibrary[charName]["charName"])
-      .setDescription(frameDataLibrary[charName][moveName]["name"])
+      .setDescription(frameDataLibrary[charName]["moves"][moveObject]["name"])
       .setThumbnail(frameDataLibrary[charName]["thumbnail"])
       .addFields(
         x
       )
-      .setFooter({text: frameDataLibrary[charName][moveName]["footer"]})
+      .setFooter({text: frameDataLibrary[charName]["moves"][moveObject]["footer"]})
 
       await interaction.reply({ embeds: [embedMessage] });
   }
