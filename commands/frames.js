@@ -42,13 +42,11 @@ module.exports = {
           break moveBreak;
         }
         const characterMoves = frameDataLibrary[interaction.options.getString('character_name')]["moves"];
-        let counter = 0;
         for (const move in characterMoves) {
           choices.push(characterMoves[move].name);
         }
         filtered = choices.filter(choice => choice.startsWith(focusedOption.value)).slice(0, 25);
       }
-      console.log(filtered)
       await interaction.respond(
         filtered.map(choice => ({ name: choice, value: choice }))
     );
@@ -58,7 +56,7 @@ module.exports = {
     const charName = interaction.options.getString('character_name');
     const moveName = interaction.options.getString('move_name');
 
-    if(!frameDataLibrary[charName] || !frameDataLibrary[charName]["moves"][moveName]){
+    if(!frameDataLibrary[charName]){
       await interaction.reply({ content: '\`INVALID CHARACTER/MOVE NAME! HOW DID YOU MESS UP?! I HAVE AUTOCOMPLETE!\`', ephemeral: true});
       return;
     }
@@ -73,12 +71,14 @@ module.exports = {
         moveObject = move;
       }
     }
-    
+
+    console.log(moveObject);
+
     const x = [{ name: '**Startup**', value: moveInfo[0], inline: true },
     { name: '**Active**', value: moveInfo[1], inline: true },
     { name: '**Recovery**', value: moveInfo[2], inline: true },
-    { name: '**On Block**', value: moveInfo[3], inline: true },
-    { name: '**On Hit**', value: moveInfo[4], inline: true },
+    { name: '**On Hit**', value: moveInfo[3], inline: true },
+    { name: '**On Block**', value: moveInfo[4], inline: true },
     { name: '**Damage**', value: moveInfo[5], inline: true },
     { name: '**RISC Gain**', value: moveInfo[6], inline: true },
     { name: '**Prorate**', value: moveInfo[7], inline: true },
@@ -86,8 +86,8 @@ module.exports = {
     { name: '**Gatlings**', value: moveInfo[9], inline: true }];
 
     const embedMessage = new EmbedBuilder()
-      .setTitle(frameDataLibrary[charName]["charName"])
-      .setDescription(frameDataLibrary[charName]["moves"][moveObject]["name"])
+      .setTitle(frameDataLibrary[charName]["moves"][moveObject]["name"])
+      .setDescription(moveObject.replace('a', '').toUpperCase())
       .setThumbnail(frameDataLibrary[charName]["thumbnail"])
       .addFields(
         x
