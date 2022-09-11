@@ -1,0 +1,950 @@
+{
+    "agents": {
+        "Brimstone": {
+            "info":{
+                "bio": "Joining from the USA, Brimstone's orbital arsenal ensures his squad always has the advantage. His ability to deliver utility precisely and from a distance makes him an unmatched boots-on-the-ground commander.",
+                "role": "Controller",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/0/04/ControllerClassSymbol.png/revision/latest?cb=20200408043911",
+                "image": "https://static.wikia.nocookie.net/valorant/images/1/16/Brimstone_artwork_full.png/revision/latest?cb=20220810202719"
+            },
+            "abilities":{
+                "Stim Beacon [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/ad/Stim_Beacon.png/revision/latest?cb=20200405205447",
+                    "description": "INSTANTLY toss a stim beacon in front of Brimstone. Upon landing, the stim beacon will create a field that grants players RapidFire and a speed boost.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "12s",
+                    "effects": "+10% Equip speed, +15% Fire rate, +10% Reload speed, +10% Recovery speed, +15% speed boost"
+                },
+                "Incendiary [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/2/26/Incendiary.png/revision/latest?cb=20200405205403",
+                    "description": "EQUIP an incendiary grenade launcher. FIRE to launch a grenade that detonates as it comes to a rest on the floor, creating a lingering fire zone that damages players within the zone.",
+                    "uses": "1",
+                    "cost": "250 Creds",
+                    "duration": "7s",
+                    "effects": "60 damage/s"
+                },
+                "Sky Smoke [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/71/Sky_Smoke.png/revision/latest?cb=20200405205417",
+                    "description": "EQUIP a tactical map. FIRE to set locations where Brimstone's smoke clouds will land. ALTERNATE FIRE to confirm, launching long-lasting smoke clouds that block vision in the selected area.",
+                    "uses": "3",
+                    "cost": "100 Creds",
+                    "duration": "19.25s",
+                    "effects": "Blocks vision"
+                },
+                "Orbital Strike [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/6/61/Orbital_Strike.png/revision/latest?cb=20200405205426",
+                    "description": "EQUIP a tactical map. FIRE to launch a lingering orbital strike laser at the selected location, dealing high damage-over-time to players caught in the selected area.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "3 s (+2 s windup)",
+                    "effects": "20 damage per tick, 6.67 ticks/sec"
+                }
+            }
+        },
+        "Phoenix": {
+            "info":{
+                "bio": "Hailing from the U.K., Phoenix's star power shines through in his fighting style, igniting the battlefield with flash and flare. Whether he's got backup or not, he'll rush into a fight on his own terms.",
+                "role": "Duelist",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/f/fd/DuelistClassSymbol.png/revision/latest?cb=20200408043920",
+                "image": "https://static.wikia.nocookie.net/valorant/images/9/9e/Phoenix_artwork_full.png/revision/latest?cb=20220810202811"
+            },
+            "abilities":{
+                "Heating Up [Passive]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/48/Phoenix_VALORANT_Portrait.png/revision/latest?cb=20220412173559",
+                    "description": "Heating Up is a Sustain passive for Phoenix icon.png Phoenix. His fire-producing abilities, Blaze and Hot Hands, will heal Phoenix instead of inflicting damage if he comes into contact with them, for a total of 50 HP over their full durations.",
+                    "uses": "~",
+                    "cost": "Free",
+                    "duration": "8s (Blaze), 4s (Hot Hands)",
+                    "effects": "1 HP healed per 0.16s (Blaze), 1 HP healed per 0.08s (Hot Hands)"
+                },
+                "Blaze [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/b/bd/Blaze.png/revision/latest?cb=20200406002639",
+                    "description": "EQUIP a flame wall. FIRE to create a line of flames that moves forward, creating a wall that blocks vision and damages players passing through it. HOLD FIRE to bend the wall in the direction of your crosshair.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "8s",
+                    "effects": "30 damage/s"
+                },
+                "Curveball [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/30/Curveball.png/revision/latest?cb=20200405193829",
+                    "description": "EQUIP a flare orb that takes a curving path and detonates shortly after throwing. FIRE to curve the flare orb to the left, detonating and blinding any player who sees the orb. ALTERNATE FIRE to curve the flare orb to the right.",
+                    "uses": "2",
+                    "cost": "250 Creds",
+                    "duration": "0.5s windup",
+                    "effects": "1.5s Flash"
+                },
+                "Hot Hands [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/75/Hot_Hands.png/revision/latest?cb=20200406002627",
+                    "description": "EQUIP a fireball. FIRE to throw a fireball that explodes after a set amount of time or upon hitting the ground, creating a lingering fire zone that damages enemies.",
+                    "uses": "1 (2 kill recharge)",
+                    "cost": "Free",
+                    "duration": "3.25s",
+                    "effects": "60 damage/s"
+                },
+                "Run it Back [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/fd/Run_it_Back.png/revision/latest?cb=20200406002648",
+                    "description": "INSTANTLY place a marker at Phoenix's location. While this ability is active, dying or allowing the timer to expire will end this ability and bring Phoenix back to this location with full health.",
+                    "uses": "1",
+                    "cost": "6 Ult Points",
+                    "duration": "10s",
+                    "effects": "Revives Phoenix with full health at the location the ability was activated"
+                }
+            }
+        }, 
+        "Sage": {
+            "info":{
+                "bio": "The stronghold of China, Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends and stave off aggressive pushes, she provides a calm center to a hellish fight.",
+                "role": "Sentinel",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/4/43/SentinelClassSymbol.png/revision/latest?cb=20200408043934",
+                "image": "https://static.wikia.nocookie.net/valorant/images/e/e0/Sage_artwork_full.png/revision/latest?cb=20220810202824"
+            },
+            "abilities":{
+                "Barrier Orb [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/1/10/Barrier_Orb.png/revision/latest?cb=20200405203507",
+                    "description": "EQUIP a barrier orb. FIRE places a wall that fortifies after a few seconds. ALT FIRE rotates the targeter.",
+                    "uses": "1",
+                    "cost": "400 Creds",
+                    "duration": "40s (+3s windup)",
+                    "effects": "400 HP, 800 HP when fortified"
+                },
+                "Slow Orb [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/b/bb/Slow_Orb.png/revision/latest?cb=20200405203400",
+                    "description": "EQUIP a slowing orb. FIRE to throw a slowing orb forward that detonates upon landing, creating a lingering field that slows players caught inside of it.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "7s",
+                    "effects": "50% Slow"
+                },
+                "Healing Orb [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/e/ea/Healing_Orb.png/revision/latest?cb=20200405203710",
+                    "description": "EQUIP a healing orb. FIRE with your crosshairs over a damaged ally to activate a heal-over-time on them. ALT FIRE while Sage is damaged to activate a self heal-over-time.",
+                    "uses": "1, 45s cooldown",
+                    "cost": "Free",
+                    "duration": "5s (Ally), 10s (Self-cast)",
+                    "effects": "60 HP"
+                },
+                "Resurrection [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/e/e1/Resurrection.png/revision/latest?cb=20200405203707",
+                    "description": "EQUIP a resurrection ability. FIRE with your crosshairs placed over a dead ally to begin resurrecting them. After a brief channel, the ally will be brought back to life with full health.",
+                    "uses": "1",
+                    "cost": "8 Ult Points",
+                    "duration": "3.3s",
+                    "effects": "Revives ally with 100 HP"
+                }
+            }
+        }, 
+        "Sova": {
+            "info":{
+                "bio": "Born from the eternal winter of Russia's tundra, Sova tracks, finds, and eliminates enemies with ruthless efficiency and precision. His custom bow and incredible scouting abilities ensure that even if you run, you cannot hide.",
+                "role": "Initiator",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/7/77/InitiatorClassSymbol.png/revision/latest?cb=20200408043926",
+                "image": "https://static.wikia.nocookie.net/valorant/images/b/b3/Sova_artwork_full.png/revision/latest?cb=20220810202832"
+            },
+            "abilities":{
+                "Owl Drone [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/1/1d/Owl_Drone.png/revision/latest?cb=20200405225244",
+                    "description": "EQUIP an owl drone. FIRE to deploy and take control of movement of the drone. While in control of the drone, FIRE to shoot a marking dart. This dart will reveal the location of any player struck by the dart.",
+                    "uses": "1",
+                    "cost": "400 Creds",
+                    "duration": "7s, 4s dart cooldown",
+                    "effects": "100 HP"
+                },
+                "Shock Bolt [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/fe/Shock_Bolt.png/revision/latest?cb=20200405225254",
+                    "description": "EQUIP a bow with shock bolt. FIRE to send the explosive bolt forward, detonating upon collision and damaging players nearby. HOLD FIRE to extend the range of the projectile. ALTERNATE FIRE to add up to two bounces to this arrow.",
+                    "uses": "2",
+                    "cost": "150 Creds",
+                    "duration": "~",
+                    "effects": "1-75 damage"
+                },
+                "Recon Bolt [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/39/Recon_Bolt.png/revision/latest?cb=20200405225305",
+                    "description": "EQUIP a bow with recon bolt. FIRE to send the recon bolt forward, activating upon collision and revealing the location of nearby enemies caught in the line of sight of the bolt. Enemies can destroy this bolt. HOLD FIRE to extend the range of the projectile. ALTERNATE FIRE to add up to two bounces to this arrow.",
+                    "uses": "1, 40s cooldown",
+                    "cost": "Free",
+                    "duration": "3.2s",
+                    "effects": "Reveals nearby enemies"
+                },
+                "Hunter's Fury [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/b/b5/Hunter%E2%80%99s_Fury.png/revision/latest?cb=20200405225316",
+                    "description": "EQUIP a bow with three long-range, wall-piercing energy blasts. FIRE to release an energy blast in a line in front of Sova, dealing damage and revealing the location of enemies caught in the line. This ability can be RE-USED up to two more times while the ability timer is active.",
+                    "uses": "1",
+                    "cost": "8 Ult Points",
+                    "duration": "6s",
+                    "effects": "80 damage"
+                }
+            }
+        }, 
+        "Viper": {
+            "info":{
+                "bio": "The American chemist, Viper deploys an array of poisonous chemical devices to control the battlefield and cripple the enemy's vision. If the toxins don't kill her prey, her mind games surely will.",
+                "role": "Controller",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/0/04/ControllerClassSymbol.png/revision/latest?cb=20200408043911",
+                "image": "https://static.wikia.nocookie.net/valorant/images/a/a4/Viper_artwork_full.png/revision/latest?cb=20220810202837"
+            },
+            "abilities":{
+                "Fuel/Toxin [Passive]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/80/Viper_VALORANT_Portrait.png/revision/latest?cb=20220301162855",
+                    "description": "Using Poison Cloud and Toxic Screen consumes Fuel. Having both abilities active together consumes Fuel 50% faster.\nAbilities that apply Toxin cause affected enemies to have their maximum health instantly decayed, which then gets lower the longer they stay within the ability's area of effect.",
+                    "uses": "~",
+                    "cost": "Free, 20s to replenish",
+                    "duration": "15s max, 10s max if both abillities are active",
+                    "effects": "-30 HP on initial contact, then -10 HP/sec"
+                },
+                "Snake Bite [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/a2/Snake_Bite.png/revision/latest?cb=20200405224128",
+                    "description": "EQUIP a chemical launcher. FIRE to launch a canister that shatters upon hitting the floor, creating a lingering chemical zone that damages and applies Vulnerable.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "5.5s",
+                    "effects": "12.5 damage/s, 2s Vulnerable"
+                },
+                "Poison Cloud [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/81/Poison_Cloud.png/revision/latest?cb=20200405224117",
+                    "description": "EQUIP a gas emitter. FIRE to throw the emitter that perpetually remains throughout the round. RE-USE the ability to create a toxic gas cloud at the cost of fuel. This ability can be RE-USED more than once and can be picked up to be REDEPLOYED.",
+                    "uses": "1, 8s cooldown",
+                    "cost": "200 Creds",
+                    "duration": "Minimum 2s",
+                    "effects": "Toxin"
+                },
+                "Toxic Screen [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/c/cd/Toxic_Screen.png/revision/latest?cb=20200405224110",
+                    "description": "EQUIP a gas emitter launcher. FIRE to deploy a long line of gas emitters. RE-USE the ability to create a tall wall of toxic gas at the cost of fuel. This ability can be RE-USED more than once.",
+                    "uses": "1, 8s cooldown",
+                    "cost": "Free",
+                    "duration": "Minimum 2s",
+                    "effects": "Toxin"
+                },
+                "Viper's Pit [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/ab/Viper%E2%80%99s_Pit.png/revision/latest?cb=20200405224059",
+                    "description": "EQUIP a chemical sprayer. FIRE to spray a chemical cloud in all directions around Viper, creating a large cloud that reduces the vision range of players and maximum health of enemies inside of it. HOLD the ability key to disperse the cloud early.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "Indefinite whenever Viper is within, 15s timer if she exits (+6s windup)",
+                    "effects": "Toxin"
+                }
+            }
+        }, 
+        "Cypher": {
+            "info":{
+                "bio": "The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy's every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.",
+                "role": "Sentinel",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/4/43/SentinelClassSymbol.png/revision/latest?cb=20200408043934",
+                "image": "https://static.wikia.nocookie.net/valorant/images/6/6c/Cypher_artwork_full.png/revision/latest?cb=20220810202731"
+            },
+            "abilities":{
+                "Trapwire [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/1/10/Barrier_Orb.png/revision/latest?cb=20200405203507",
+                    "description": "EQUIP a trapwire. FIRE to place a destructible and covert tripwire at the targeted location, creating a line that spans between the placed location and the wall opposite. Enemy players who cross a tripwire will be tethered, revealed, and dazed after a short period if they do not destroy the device in time. This ability can be picked up to be REDEPLOYED.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "3s windup",
+                    "effects": "5 damage, 3s Concuss (if windup completes)"
+                },
+                "Cypher Cage [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/7c/Cyber_Cage.png/revision/latest?cb=20200405222332",
+                    "description": "INSTANTLY toss the cyber cage in front of Cypher. ACTIVATE to create a zone that blocks vision and plays an audio cue when enemies pass through it.",
+                    "uses": "2",
+                    "cost": "100 Creds",
+                    "duration": "7.25s",
+                    "effects": "Blocks vision"
+                },
+                "Spycam [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/3f/Spycam.png/revision/latest?cb=20200405222325",
+                    "description": "EQUIP a spycam. FIRE to place the spycam at the targeted location. RE-USE this ability to take control of the camera's view. While in control of the camera, FIRE to shoot a marking dart. This dart will reveal the location of any player struck by the dart.",
+                    "uses": "1, 15s cooldown (Recalled), 45s cooldown (Destroyed), 6s cooldown (Dart)",
+                    "cost": "Free",
+                    "duration": "~",
+                    "effects": "Reveals enemy"
+                },
+                "Neural Theft [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/42/Neural_Theft.png/revision/latest?cb=20200405222316",
+                    "description": "INSTANTLY use on a dead enemy player in your crosshairs to reveal the location of all living enemy players.",
+                    "uses": "1",
+                    "cost": "6 Ult Points",
+                    "duration": "2s windup",
+                    "effects": "Reveals living enemies"
+                }
+            }
+        },
+        "Reyna": {
+            "info":{
+                "bio": "Forged in the heart of Mexico, Reyna dominates single combat, popping off with each kill she scores. Her capability is only limited by her raw skill, making her highly dependent on performance.",
+                "role": "Duelist",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/f/fd/DuelistClassSymbol.png/revision/latest?cb=20200408043920",
+                "image": "https://static.wikia.nocookie.net/valorant/images/1/1d/Reyna_artwork_full.png/revision/latest?cb=20220810202820"
+            },
+            "abilities":{
+                "Soul Harvest [Passive]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/c/c1/Reyna_VALORANT_Portrait.png/revision/latest?cb=20220412173559",
+                    "description": "Enemies that die to Reyna, or die within 3 seconds of taking damage from Reyna, leave behind Soul Orbs that last 3 seconds.",
+                    "uses": "~",
+                    "cost": "Free",
+                    "duration": "3s",
+                    "effects": "~"
+                },
+                "Leer [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/3e/Leer.png/revision/latest?cb=20200802072434",
+                    "description": "EQUIP an ethereal, destructible eye. ACTIVATE to cast the eye a short distance forward. The eye will nearsight all enemies who look at it.",
+                    "uses": "2",
+                    "cost": "250 Creds",
+                    "duration": "2s",
+                    "effects": "100 HP"
+                 },
+                "Devour [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/3d/Devour.png/revision/latest?cb=20200802072627",
+                    "description": "INSTANTLY consume a nearby Soul Orb, rapidly healing for a short duration. Health gained through this skill exceeding 100 will decay over time. If Empress is active, this skill will automatically cast and not consume the Soul Orb.",
+                    "uses": "2 (shared with Dismiss)",
+                    "cost": "200 Creds (shared with Dismiss)",
+                    "duration": "3s",
+                    "effects": "30s Overheal"
+                },
+                "Dismiss [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/0/0a/Dismiss.png/revision/latest?cb=20200802072650",
+                    "description": "INSTANTLY consume a nearby Soul Orb, becoming intangible for a short duration. If Empress is active, also become invisible.",
+                    "uses": "2 (shared with Dismiss)",
+                    "cost": "200 Creds (shared with Dismiss)",
+                    "duration": "2s",
+                    "effects": "Intangigle"
+                },
+                "Empress [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/1/12/Empress.png/revision/latest?cb=20200802072724",
+                    "description": "INSTANTLY enter a frenzy, increasing firing, equip and reload speed dramatically. Grants infinite charges of Soul Harvest abilities. When an enemy dies to Reyna, or dies within 3 seconds of taking damage from Reyna, the duration is renewed.",
+                    "uses": "1",
+                    "cost": "6 Ult Points",
+                    "duration": "30s",
+                    "effects": "+25% Equip speed, +15% Fire rate, +25% Reload speed, +25% Recovery speed"
+                }
+            }
+        }, 
+        "Killjoy": {
+            "info":{
+                "bio": "The genius of Germany. Killjoy secures the battlefield with ease using her arsenal of inventions. If the damage from her gear doesn't stop her enemies, her robots' debuff will help make short work of them.",
+                "role": "Sentinel",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/4/43/SentinelClassSymbol.png/revision/latest?cb=20200408043934",
+                "image": "https://static.wikia.nocookie.net/valorant/images/6/63/Killjoy_artwork_full.png/revision/latest?cb=20220810202751"
+            },
+            "abilities":{
+                "Nanoswarm [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/4d/Nanoswarm.png/revision/latest?cb=20200804132242",
+                    "description": "EQUIP a Nanoswarm grenade. FIRE to throw the grenade. Upon landing, the Nanoswarm goes covert. ACTIVATE the Nanoswarm to deploy a damaging swarm of nanobots.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "4s",
+                    "effects": "45 damage/s"
+                },
+                "Alrarmbot [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/d/d9/Alarmbot.png/revision/latest?cb=20200804132222",
+                    "description": "EQUIP a covert Alarmbot. FIRE to deploy a bot that hunts down enemies that get in range. After reaching its target, the bot explodes and applies Vulnerable to enemies in the area. HOLD EQUIP to recall a deployed bot.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "20s cooldown",
+                    "effects": "4s Vulnerable"
+                },
+                "Turret [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/32/Turret.png/revision/latest?cb=20200804132303",
+                    "description": "EQUIP a Turret. FIRE to deploy a turret that automatically fires at enemies in a 180 degree cone. HOLD EQUIP to recall the deployed turret.",
+                    "uses": "1",
+                    "cost": "Free",
+                    "duration": "45s cooldown (Destroyed), 20s cooldown (Recalled)",
+                    "effects": "0-20m: 8 damage, 20-35m: 6 damage, 35+m: 4 damage (3 shots per burst)"
+                },
+                "Lockdown [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/7c/Lockdown.png/revision/latest?cb=20200804132315",
+                    "description": "EQUIP the Lockdown device. FIRE to deploy the device. After a long windup, the device Detains all enemies caught in the radius. The device can be destroyed by enemies.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "13s windup",
+                    "effects": "8s Detain"
+                }
+            }
+        }, 
+        "Breach":{
+            "info":{
+                "bio": "Breach, the bionic Swede, fires powerful, targeted kinetic blasts to aggressively clear a path through enemy ground. The damage and disruption he inflicts ensures no fight is ever fair.",
+                "role": "Initiator",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/7/77/InitiatorClassSymbol.png/revision/latest?cb=20200408043926",
+                "image": "https://static.wikia.nocookie.net/valorant/images/c/c0/Breach_artwork_full.png/revision/latest?cb=20220810202713"
+            },
+            "abilities":{
+                "Aftershock [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/32/Aftershock.png/revision/latest?cb=20200405184838",
+                    "description": "EQUIP a fusion charge. FIRE the charge to set a slow-acting burst through the wall. The burst does heavy damage to anyone caught in its area.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "2.2s windup",
+                    "effects": "60 damage per tick, 3 ticks"
+                },
+                "Flashpoint [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/f2/Flashpoint.png/revision/latest?cb=20200405185608",
+                    "description": "EQUIP a blinding charge. FIRE the charge to set a fast-acting burst through the wall. The charge detonates to blind all players looking at it.",
+                    "uses": "2",
+                    "cost": "250 Creds",
+                    "duration": "0.5s windup",
+                    "effects": "2s Flash"
+                },
+                "Fault Line [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/0/09/Fault_Line.png/revision/latest?cb=20200405190047",
+                    "description": "EQUIP a seismic blast. HOLD FIRE to increase the distance. RELEASE to set off the quake, dazing all players in its zone and in a line up to the zone.",
+                    "uses": "1, 40s cooldown",
+                    "cost": "Free",
+                    "duration": "1s windup",
+                    "effects": "3.5s Concuss"
+                },
+                "Rolling Thunder [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/7a/Rolling_Thunder.png/revision/latest?cb=20200405190227",
+                    "description": "EQUIP a seismic charge. FIRE to send a cascading quake through all terrain in a large line. The quake dazes and knocks up anyone caught in it.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "1.2s windup",
+                    "effects": "7m Knockback, 6s Concuss"
+                }
+            }
+        }, 
+        "Omen": {
+            "info":{
+                "bio": "A phantom of a memory, Omen hunts in the shadows. He renders enemies blind, teleports across the field, then lets paranoia take hold as his foe scrambles to learn where he might strike next.",
+                "role": "Controller",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/0/04/ControllerClassSymbol.png/revision/latest?cb=20200408043911",
+                "image": "https://static.wikia.nocookie.net/valorant/images/6/69/Omen_artwork_full.png/revision/latest?cb=20220810202807"
+            },
+            "abilities":{
+                "Shrouded Step [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/80/Shrouded_Step.png/revision/latest?cb=20200405212629",
+                    "description": "EQUIP a shrouded step ability and see its range indicator. FIRE to begin a brief channel, then teleport to the marked location.",
+                    "uses": "2",
+                    "cost": "100 Creds",
+                    "duration": "~",
+                    "effects": "Teleports"
+                },
+                "Paranoia [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/8d/Paranoia.png/revision/latest?cb=20200405212616",
+                    "description": "EQUIP a blinding orb. FIRE to throw it forward, briefly reducing the vision range and deafening all players it touches. This projectile can pass through walls.",
+                    "uses": "1",
+                    "cost": "300 Creds",
+                    "duration": "~",
+                    "effects": "2s Nearsight"
+                },
+                "Dark Cover [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/2/2c/Dark_Cover.png/revision/latest?cb=20200405212635",
+                    "description": "EQUIP a shadow orb, entering a phased world to place and target the orbs. PRESS the ability key to throw the shadow orb to the marked location, creating a long-lasting shadow sphere that blocks vision. HOLD FIRE while targeting to move the marker further away. HOLD SECONDARY FIRE while targeting to move the marker closer. PRESS RELOAD to toggle normal targeting view.",
+                    "uses": "2, 30s cooldown",
+                    "cost": "150 Creds",
+                    "duration": "15s",
+                    "effects": "Blocks vision"
+                },
+                "From the Shadows [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/0/0e/From_the_Shadows.png/revision/latest?cb=20200405212650",
+                    "description": "EQUIP a tactical map. FIRE to begin teleporting to the selected location. While teleporting, Omen will appear as a Shade that can be destroyed by an enemy to cancel his teleport, or press EQUIP for Omen to cancel his teleport.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "4s",
+                    "effects": "Teleports"
+                }
+            }
+        }, 
+        "Jett": {
+            "info":{
+                "bio": "Representing her home country of South Korea, Jett's agile and evasive fighting style lets her take risks no one else can. She runs circles around every skirmish, cutting enemies before they even know what hit them.",
+                "role": "Duelist",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/f/fd/DuelistClassSymbol.png/revision/latest?cb=20200408043920",
+                "image": "https://static.wikia.nocookie.net/valorant/images/2/2a/Jett_artwork_full.png/revision/latest?cb=20220810202742"
+            },
+            "abilities":{
+                "Drift [Passive]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/43/Drift.png/revision/latest?cb=20210623001048",
+                    "description": "Holding the jump button while falling allows you to glide through the air.",
+                    "uses": "~",
+                    "cost": "Free",
+                    "duration": "~",
+                    "effects": "~"
+                },
+                "Cloudburst [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/b/b9/Cloudburst.png/revision/latest?cb=20200405215200",
+                    "description": "INSTANTLY throw a projectile that expands into a brief vision-blocking cloud on impact with a surface. HOLD the ability key to curve the smoke in the direction of your crosshair.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "4.5s",
+                    "effects": "Blocks vision"
+                },
+                "Updraft [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/d/dc/Updraft.png/revision/latest?cb=20200405215211",
+                    "description": "INSTANTLY propel Jett high into the air.",
+                    "uses": "2",
+                    "cost": "150 Creds",
+                    "duration": "0.6s",
+                    "effects": "Propels Jett upwards"
+                },
+                "Tailwind [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/b/bc/Tailwind.png/revision/latest?cb=20200405215218",
+                    "description": "ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward.",
+                    "uses": "1 (2 kill recharge)",
+                    "cost": "Free",
+                    "duration": "12s (Charge), 0.45s (Dash)",
+                    "effects": "Propels Jett forwards"
+                },
+                "Blade Storm [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/fd/Run_it_Back.png/revision/latest?cb=20200406002648",
+                    "description": "EQUIP a set of highly accurate throwing knives. FIRE to throw a single knife and recharge knives on a kill. ALTERNATE FIRE to throw all remaining daggers but does not recharge on a kill.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "~",
+                    "effects": "150 damage (Head), 50 damage (Body), 42 damage (Legs)"
+                }
+            }
+        }, 
+        "Raze": {
+            "info":{
+                "bio": "Raze explodes out of Brazil with her big personality and big guns. With her blunt-force-trauma playstyle, she excels at flushing entrenched enemies and clearing tight spaces with a generous dose of “boom.”",
+                "role": "Duelist",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/f/fd/DuelistClassSymbol.png/revision/latest?cb=20200408043920",
+                "image": "https://static.wikia.nocookie.net/valorant/images/0/0e/Raze_artwork_full.png/revision/latest?cb=20220810202815"
+            },
+            "abilities":{
+                "Boom Bot [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/ff/Boom_Bot.png/revision/latest?cb=20200408152758",
+                    "description": "EQUIP a Boom Bot. FIRE will deploy the bot, causing it to travel in a straight line on the ground, bouncing off walls. The Boom Bot will lock on to any enemies in its frontal cone and chase them, exploding for heavy damage if it reaches them.",
+                    "uses": "1",
+                    "cost": "300 Creds",
+                    "duration": "10s",
+                    "effects": "30-80 damage"
+                },
+                "Blast Pack [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/e/e1/Blast_Pack.png/revision/latest?cb=20200422114117",
+                    "description": "INSTANTLY throw a Blast Pack that will stick to surfaces. RE-USE the ability after deployment to detonate, damaging and moving anything hit.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "5s",
+                    "effects": "5-15 damage (Instant), 20-50 damage (After arming)"
+                },
+                "Paint Shells [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/30/Paint_Shells.png/revision/latest?cb=20200408152815",
+                    "description": "EQUIP a cluster grenade. FIRE to throw the grenade, which does damage and creates sub-munitions, each doing damage to anyone in their range.",
+                    "uses": "1 (2 kill recharge)",
+                    "cost": "Free",
+                    "duration": "~",
+                    "effects": "15-55 damage"
+                },
+                "Showstopper [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/1/18/Showstopper.png/revision/latest?cb=20200408152612",
+                    "description": "EQUIP a rocket launcher. FIRE shoots a rocket that does massive area damage on contact with anything.",
+                    "uses": "1",
+                    "cost": "8 Ult Points",
+                    "duration": "10s",
+                    "effects": "30-150 damage"
+                }
+            }
+        }, 
+        "Skye": {
+            "info":{
+                "bio": "Hailing from Australia, Skye and her band of beasts trail-blaze the way through hostile territory. With her creations hampering the enemy, and her power to heal others, the team is strongest and safest by Skye’s side.",
+                "role": "Initiator",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/7/77/InitiatorClassSymbol.png/revision/latest?cb=20200408043926",
+                "image": "https://static.wikia.nocookie.net/valorant/images/0/0c/Skye_artwork_full.png/revision/latest?cb=20220810202828"
+            },
+            "abilities":{
+                "Regrowth [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/47/Regrowth.png/revision/latest?cb=20201014013823",
+                    "description": "EQUIP a healing trinket. HOLD FIRE to channel, healing allies in range and line of sight. Can be reused until her healing pool is depleted. Skye cannot heal herself.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "~",
+                    "effects": "Heals 20 HP/s"
+                },
+                "Trailblazer [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/89/Trailblazer.png/revision/latest?cb=20201014013805",
+                    "description": "EQUIP a Tasmanian tiger trinket. FIRE to send out and take control of the predator. While in control, FIRE to leap forward, exploding in a concussive blast and damaging directly hit enemies.",
+                    "uses": "1",
+                    "cost": "250 Creds",
+                    "duration": "6s",
+                    "effects": "30 damage, 2.5-4s Concuss"
+                },
+                "Guiding Light [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/37/Guiding_Light.png/revision/latest?cb=20201014013858",
+                    "description": "EQUIP a hawk trinket. FIRE to send it forward. HOLD FIRE to guide the hawk in the direction of your crosshair. RE-USE while the hawk is in flight to transform it into a flash that plays a hit confirm if an enemy was within range and line of sight.",
+                    "uses": "2",
+                    "cost": "250 Creds, 40s cooldown",
+                    "duration": "2.5s",
+                    "effects": "2s Flash"
+                },
+                "Seekers [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/a9/Seekers.png/revision/latest?cb=20201014013843",
+                    "description": "EQUIP a Seeker trinket. FIRE to send out three Seekers to track down the three closest enemies. If a Seeker reaches its target, it nearsights them.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "15s",
+                    "effects": "3s Nearsight, 5s 60% Slow"
+                }
+            }
+        }, 
+        "Yoru": {
+            "info":{
+                "bio": "Japanese native, Yoru, rips holes straight through reality to infiltrate enemy lines unseen. Using deception and aggression in equal measure, he gets the drop on each target before they know where to look.",
+                "role": "Duelist",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/f/fd/DuelistClassSymbol.png/revision/latest?cb=20200408043920",
+                "image": "https://static.wikia.nocookie.net/valorant/images/3/3a/Yoru_artwork_full.png/revision/latest?cb=20220810202841"
+            },
+            "abilities":{
+                "Fakeout [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/b/b1/Fakeout.png/revision/latest?cb=20220301160110",
+                    "description": "EQUIP an echo that transforms into a mirror image of Yoru when activated. FIRE to instantly activate the mirror image and send it forward. ALT FIRE to place an inactive echo. USE to transform an inactive echo into a mirror image and send it forward. Mirror images explode in a blinding flash when destroyed by enemies.",
+                    "uses": "1",
+                    "cost": "100 Creds",
+                    "duration": "10s",
+                    "effects": "150 HP"
+                },
+                "Blindside [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/2/2f/Blindside.png/revision/latest?cb=20210112180620",
+                    "description": "EQUIP to rip an unstable dimensional fragment from reality. FIRE to throw the fragment, activating a flash that winds up once it collides with a hard surface in world.",
+                    "uses": "2",
+                    "cost": "250 Creds",
+                    "duration": "1.5s Flash (+0.6s windup)",
+                    "effects": "5-15 damage (Instant), 20-50 damage (After arming)"
+                },
+                "Gatecrash [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/f4/Gatecrash.png/revision/latest?cb=20210119041159",
+                    "description": "EQUIP to harness a rift tether. FIRE to send the tether out moving forward. ALT FIRE to place a tether in place. ACTIVATE to teleport to the tether's location. USE to trigger a fake teleport.",
+                    "uses": "2 (2 kill recharge)",
+                    "cost": "200 Creds",
+                    "duration": "30s",
+                    "effects": "100 HP"
+                },
+                "Dimensional Drift [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/70/Dimensional_Drift.png/revision/latest?cb=20210112180612",
+                    "description": "EQUIP a mask that can see between dimensions. FIRE to drift into Yoru's dimension, unable to be affected or seen by enemies from the outside.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "12s",
+                    "effects": "~"
+                }
+            }
+        }, 
+        "Astra": {
+            "info":{
+                "bio": "Ghanaian Agent Astra harnesses the energies of the cosmos to reshape battlefields to her whim. With full command of her astral form and a talent for deep strategic foresight, she's always eons ahead of her enemy's next move.",
+                "role": "Controller",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/0/04/ControllerClassSymbol.png/revision/latest?cb=20200408043911",
+                "image": "https://static.wikia.nocookie.net/valorant/images/d/d2/Astra_artwork_full.png/revision/latest?cb=20220810202708"
+            },
+            "abilities":{
+                "Astral Form [Passive + X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/ac/Astral_Form.png/revision/latest?cb=20210301060736",
+                    "description": "ACTIVATE to enter Astral Form where you can place Stars with PRIMARY FIRE. Stars can be reactivated later, transforming them into a Nova Pulse, Nebula, or Gravity Well.",
+                    "uses": "4 Stars",
+                    "cost": "150 Creds",
+                    "duration": "25s cooldown (after Dissipate)",
+                    "effects": "~"
+                },
+                "Gravity Well [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/41/Gravity_Well.png/revision/latest?cb=20210302170436",
+                    "description": "Place Stars in Astral Form. ACTIVATE a Star to form a Gravity Well. Players in the area are pulled toward the center before it explodes, making all players still trapped inside vulnerable.",
+                    "uses": "1, 45s cooldown",
+                    "cost": "150 Creds",
+                    "duration": "2.75s",
+                    "effects": "5s Vulnerable"
+                },
+                "Nova Pulse [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/5/51/Nova_Pulse.png/revision/latest?cb=20210302170417",
+                    "description": "Place Stars in Astral Form. ACTIVATE a Star to detonate a Nova Pulse. The Nova Pulse charges briefly then strikes, concussing all players in its area.",
+                    "uses": "1, 45s cooldown",
+                    "cost": "200 Creds",
+                    "duration": "1.25s windup",
+                    "effects": "4s Concuss"
+                },
+                "Nebula/Dissipate [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/8b/Nebula_-_Dissipate.png/revision/latest?cb=20210302170357",
+                    "description": "Place Stars in Astral Form. ACTIVATE a Star to transform it into a Nebula (smoke). USE a Star to Dissipate it, returning the Star to be placed in a new location after a delay. Dissipate briefly forms a fake Nebula at the Star’s location before returning.",
+                    "uses": "150 Creds",
+                    "cost": "Free",
+                    "duration": "14.25s (Nebula), 1s (Dissipate)",
+                    "effects": "Blocks vision"
+                },
+                "Cosmic Divide [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/f4/Cosmic_Divide.png/revision/latest?cb=20210302170328",
+                    "description": "When Cosmic Divide is charged, use SECONDARY FIRE in Astral Form to begin aiming it, then PRIMARY FIRE to select two locations. An infinite Cosmic Divide connects the two points you select. Cosmic Divide blocks bullets and heavily dampens audio.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "21s",
+                    "effects": "Blocks vision and bullets, dampens audio"
+                }
+            }
+        },
+        "KAY/O": {
+            "info":{
+                "bio": "KAY/O is a machine of war built for a single purpose: neutralizing radiants. His power to suppress enemy abilities cripples his opponents' capacity to fight back, securing him and his allies the ultimate edge.",
+                "role": "Initiator",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/7/77/InitiatorClassSymbol.png/revision/latest?cb=20200408043926",
+                "image": "https://static.wikia.nocookie.net/valorant/images/8/8a/KAYO_artwork_full.png/revision/latest?cb=20220810202747"
+            },
+            "abilities":{
+                "FRAG/ment [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/4/46/FRAG-ment.png/revision/latest?cb=20210617182119",
+                    "description": "EQUIP a fusion charge. FIRE the charge to set a slow-acting burst through the wall. The burst does heavy damage to anyone caught in its area.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "4s",
+                    "effects": "25-60 damage per tick, 3 ticks"
+                },
+                "FLASH/drive [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/f/f2/Flashpoint.png/revision/latest?cb=20200405185608",
+                    "description": "EQUIP a flash grenade. FIRE to throw. The flash grenade explodes after a short fuse, blinding anyone in line of sight.",
+                    "uses": "2",
+                    "cost": "250 Creds",
+                    "duration": "1.6s windup (Primary), 1.6s windup (Alt)",
+                    "effects": "2s Flash"
+                },
+                "ZER0/point [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/2/2a/ZERO-point.png/revision/latest?cb=20210617182312",
+                    "description": "EQUIP a suppression blade. FIRE to throw. The blade sticks to the first surface it hits, winds up, and suppresses anyone in the radius of the explosion.",
+                    "uses": "1, 40s cooldown",
+                    "cost": "Free",
+                    "duration": "1s windup",
+                    "effects": "8s Suppression"
+                },
+                "NULL/cmd [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/8a/NULL-cmd.png/revision/latest?cb=20210617182330",
+                    "description": "INSTANTLY overload with polarized radianite energy that pulses from KAY/O in a massive radius. Enemies hit with pulses are suppressed for a short duration. While overloaded, KAY/O gains combat stim and can be re-stabilized if downed.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "12s (Overload), 15s (Downed)",
+                    "effects": "+15% Fire rate, +10% Reload speed, +10% Recovery speed, 4s Suppression per pulse"
+                }
+            }
+        }, 
+        "Chamber": {
+            "info":{
+                "bio": "Well dressed and well armed, French weapons designer Chamber expels aggressors with deadly precision. He leverages his custom arsenal to hold the line and pick off enemies from afar, with a contingency built for every plan.",
+                "role": "Sentinel",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/4/43/SentinelClassSymbol.png/revision/latest?cb=20200408043934",
+                "image": "https://static.wikia.nocookie.net/valorant/images/1/1d/Chamber_artwork_full.png/revision/latest?cb=20220810202725"
+            },
+            "abilities":{
+                "Trademark [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/3b/Trademark.png/revision/latest?cb=20211116151530",
+                    "description": "PLACE a trap that scans for enemies. When a visible enemy comes in range, the trap counts down and then destabilizes the terrain around them, creating a lingering field that slows players caught inside of it.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "~",
+                    "effects": "6s 50% Slow"
+                },
+                "Headhunter [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/0/06/Headhunter.png/revision/latest?cb=20211116151539",
+                    "description": "ACTIVATE to equip a heavy pistol. ALT FIRE with the pistol equipped to aim down sights.",
+                    "uses": "8 bullets",
+                    "cost": "150 Creds (per bullet)",
+                    "duration": "~",
+                    "effects": "159 damage Head, 55 damage Body, 46 damage Legs"
+                },
+                "Rendezvous [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/8/83/Rendezvous.png/revision/latest?cb=20211116151506",
+                    "description": "PLACE two teleport anchors. While on the ground and in range of an anchor, REACTIVATE to quickly teleport to the other anchor. Anchors can be picked up to be REDEPLOYED.",
+                    "uses": "1, 30s cooldown (Recalled), 45s cooldown (Destroyed)",
+                    "cost": "Free",
+                    "duration": "1.3s",
+                    "effects": "Teleports"
+                },
+                "Tour De Force [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/e/eb/Tour_De_Force.png/revision/latest?cb=20211116151518",
+                    "description": "ACTIVATE to summon a powerful, custom sniper rifle. Killing an enemy creates a lingering field that slows players caught inside of it.",
+                    "uses": "5 bullets",
+                    "cost": "8 Ult Points",
+                    "duration": "2.3s windup",
+                    "effects": "255 damage Head, 150 damage Body, 127 damage Legs, 6s 50% Slow"
+                }
+            }
+        }, 
+        "Neon":{
+            "info":{
+                "bio": "Filipino Agent Neon surges forward at shocking speeds, discharging bursts of bioelectric radiance as fast as her body generates it. She races ahead to catch enemies off guard, then strikes them down quicker than lightning.",
+                "role": "Duelist",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/f/fd/DuelistClassSymbol.png/revision/latest?cb=20200408043920",
+                "image": "https://static.wikia.nocookie.net/valorant/images/3/34/Neon_artwork_full.png/revision/latest?cb=20220810202800"
+            },
+            "abilities":{
+                "Energy [Passive]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/0/01/Neon_VALORANT_Portrait.png/revision/latest?cb=20220325004846",
+                    "description": "Using High Gear and Overdrive consumes Energy. Killing an enemy agent instantly refills Energy.",
+                    "uses": "Unlimited as long as there's energy (60s to replenish from 0-100)",
+                    "cost": "Free",
+                    "duration": "10s (High Gear), 20s (Overdrive)",
+                    "effects": "100 Energy"
+                },
+                "Fast Lane [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/e/e7/Fast_Lane.png/revision/latest?cb=20220107183348",
+                    "description": "FIRE two energy lines forward on the ground that extend a short distance or until they hit a surface. The lines rise into walls of static electricity that block vision.",
+                    "uses": "1",
+                    "cost": "300 Creds",
+                    "duration": "6s",
+                    "effects": "Blocks vision"
+                },
+                "Relay Bolt [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/ac/Relay_Bolt.png/revision/latest?cb=20220107183420",
+                    "description": "INSTANTLY throw an energy bolt that bounces once. Upon hitting each surface, the bolt electrifies the ground below with a concussive blast.",
+                    "uses": "2",
+                    "cost": "200 Creds",
+                    "duration": "1.1s windup",
+                    "effects": "3s Concuss"
+                },
+                "High Gear [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/7/7f/High_Gear.png/revision/latest?cb=20220107183445",
+                    "description": "INSTANTLY channel Neon's high power for increased speed. When charged, ALT FIRE to trigger an electric slide. Slide charge resets every two kills.",
+                    "uses": "1 (2 kill recharge)",
+                    "cost": "Free",
+                    "duration": "10s max",
+                    "effects": "Increased speed"
+                },
+                "Overdrive [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/ab/Overdrive.png/revision/latest?cb=20220107183512",
+                    "description": "Unleash Neon's full power and speed for a short duration. FIRE to channel the power into a deadly lightning beam with high movement accuracy.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "20s minimum",
+                    "effects": "54-30 damage Head, 18-10 damage Body, 15-8 damage Legs (with falloff)"
+                }
+            }
+        }, 
+        "Fade": {
+            "info":{
+                "bio": "Turkish bounty hunter, Fade, unleashes the power of raw nightmares to seize enemy secrets. Attuned with terror itself, she hunts targets and reveals their deepest fears—before crushing them in the dark.",
+                "role": "Initiator",
+                "roleIcon": "https://static.wikia.nocookie.net/valorant/images/7/77/InitiatorClassSymbol.png/revision/latest?cb=20200408043926",
+                "image": "https://static.wikia.nocookie.net/valorant/images/e/e2/Fade_artwork_full.png/revision/latest?cb=20220810202738"
+            },
+            "abilities":{
+                "Terror Trail [Passive]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/a/a6/Fade_icon.png/revision/latest?cb=20220525095157",
+                    "description": "Abilities that apply Terror Trail mark enemies, causing their position and movements to be tracked by dark mist. Prowler.png Prowlers can be used to pursue trails.",
+                    "uses": "~",
+                    "cost": "Free",
+                    "duration": "~",
+                    "effects": "Mark"
+                },
+                "Prowler [C]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/6/68/Prowler.png/revision/latest?cb=20220426222657",
+                    "description": "EQUIP a prowler. FIRE to send the prowler forward. HOLD FIRE to steer the prowler towards your crosshair. The prowler will chase down the first enemy or terror trail it sees, and nearsight the enemy on impact.",
+                    "uses": "2",
+                    "cost": "250 Creds",
+                    "duration": "3s",
+                    "effects": "3.5s Nearsight"
+                },
+                "Seize [Q]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/1/1f/Seize.png/revision/latest?cb=20220426222708",
+                    "description": "EQUIP a knot of raw fear. FIRE to throw. The knot drops down after a set time. RE-USE to drop the knot early. The knot ruptures on impact, holding nearby enemies in place. Held enemies are deafened, and decayed.",
+                    "uses": "1",
+                    "cost": "200 Creds",
+                    "duration": "4.5s",
+                    "effects": "Deafen, 75 HP Decay (restored over 5 s)"
+                },
+                "Haunt [E]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/3/37/Haunt.png/revision/latest?cb=20220426222713",
+                    "description": "EQUIP a haunting watcher. FIRE to throw. The watcher drops down after a set time. RE-USE to drop the watcher early. The watcher lashes out on impact, revealing enemies in its line of sight and creating terror trails to them. Enemies can destroy the watcher.",
+                    "uses": "1, 40s cooldown",
+                    "cost": "Free",
+                    "duration": "2s",
+                    "effects": "12s Trail"
+                },
+                "Nightfall [X]": {
+                    "icon": "https://static.wikia.nocookie.net/valorant/images/9/90/Nightfall.png/revision/latest?cb=20220426222718",
+                    "description": "EQUIP the power of nightmare itself. FIRE to unleash a wave of unstoppable nightmare energy. Enemies caught in the wave are marked by terror trails, deafened, and decayed.",
+                    "uses": "1",
+                    "cost": "7 Ult Points",
+                    "duration": "~",
+                    "effects": "12s Trail + Deafen, 75 HP Decay (restored over 12s)"
+                }
+            }
+        }
+    },
+    "guns": {
+        "Classic": {
+            "type": "Sidearm",
+            "stats": "Free\t78/66\t26/22\t22/18\t30m\t6.75 \t5.73 \t1.75\t12",
+            "image": "https://static.wikia.nocookie.net/valorant/images/5/57/Classic.png/revision/latest/scale-to-width-down/130?cb=20220306002125"
+        },
+        "Shorty": {
+            "type": "Sidearm",
+            "stats": "150\t24/16/7\t12/8/3\t10/6/2\t9-15m\t3.33\t5.4\t1.75\t2",
+            "image": "https://static.wikia.nocookie.net/valorant/images/7/77/Shorty.png/revision/latest/scale-to-width-down/170?cb=20220306002343"
+        },
+        "Frenzy": {
+            "type": "Sidearm",
+            "stats": "450\t78/63\t26/21\t22/17\t20m\t10\t5.73\t1.5\t13",
+            "image": "https://static.wikia.nocookie.net/valorant/images/f/f1/Frenzy.png/revision/latest/scale-to-width-down/130?cb=20220306002141"
+        },
+        "Ghost": {
+            "type": "Sidearm",
+            "stats": "500\t105/87\t30/25\t25/21\t30m\t6.75\t5.73\t1.5\t15",
+            "image": "https://static.wikia.nocookie.net/valorant/images/a/ab/Ghost.png/revision/latest/scale-to-width-down/170?cb=20220306002156"
+        },
+        "Sheriff": {
+            "type": "Sidearm",
+            "stats": "800\t159/145\t55/50\t46/42\t30m\t4\t5.4\t2.25\t6",
+            "image": "https://static.wikia.nocookie.net/valorant/images/3/3e/Sheriff.png/revision/latest/scale-to-width-down/170?cb=20220306002329"
+        },
+        "Stinger": {
+            "type": "SMG",
+            "stats": "950\t67/62\t27/25\t22/21\t20m\t16\t5.73\t2.25\t20",
+            "image": "https://static.wikia.nocookie.net/valorant/images/b/b6/Stinger.png/revision/latest/scale-to-width-down/200?cb=20220306002413"
+        },
+        "Spectre": {
+            "type": "SMG",
+            "stats": "1600\t78/66\t26/22\t22/18\t20m\t13.13\t5.73\t2.25\t30",
+            "image": "https://static.wikia.nocookie.net/valorant/images/9/90/Spectre.png/revision/latest/scale-to-width-down/200?cb=20220306002356"
+        },
+        "Bucky": {
+            "type": "Shotgun",
+            "stats": "850\t1.1 (low)\t40/26/18\t20/13/9\t17/11/7\t8-12m\t1.1\t5.06\t2.5\t5",
+            "image": "https://static.wikia.nocookie.net/valorant/images/e/eb/Bucky.png/revision/latest/scale-to-width-down/200?cb=20220306002057"
+        },
+        "Judge": {
+            "type": "Shotgun",
+            "stats": "1850\t34/20/14\t17/10/10\t14/8/5\t10-15m\t3.5\t5.06\t2.2\t7",
+            "image": "https://static.wikia.nocookie.net/valorant/images/8/8a/Judge.png/revision/latest/scale-to-width-down/200?cb=20220306002225"
+        },
+        "Bulldog": {
+            "type": "Rifle",
+            "stats": "2050\t115\t35\t29\tN/A\t9.14\t5.4\t2.5\t24",
+            "image": "https://static.wikia.nocookie.net/valorant/images/0/07/Bulldog.png/revision/latest/scale-to-width-down/200?cb=20220306002110"
+        },
+        "Guardian": {
+            "type": "Rifle",
+            "stats": "2250\t195\t65\t48\tN/A\t5.25\t5.4\t2.5\t12",
+            "image": "https://static.wikia.nocookie.net/valorant/images/f/fd/Guardian.png/revision/latest/scale-to-width-down/200?cb=20220306002211"
+        },
+        "Phantom": {
+            "type": "Rifle",
+            "stats": "2900\t156/140/124\t39/35/31\t33/29/26\t15-30m\t11\t5.4\t2.5\t30",
+            "image": "https://static.wikia.nocookie.net/valorant/images/e/ec/Phantom.png/revision/latest/scale-to-width-down/200?cb=20220306002314"
+        },
+        "Vandal": {
+            "type": "Rifle",
+            "stats": "2900\t160\t40\t34\tN/A\t9.75\t5.4\t2.5\t25",
+            "image": "https://static.wikia.nocookie.net/valorant/images/5/56/Vandal.png/revision/latest/scale-to-width-down/200?cb=20220306002438"
+        },
+        "Marshall": {
+            "type": "Sniper Rifle",
+            "stats": "950\t202\t101\t85\tN/A\t1.5\t5.4\t2.5\t5",
+            "image": "https://static.wikia.nocookie.net/valorant/images/b/b9/Marshal.png/revision/latest/scale-to-width-down/200?cb=20220306002237"
+        },
+        "Operator": {
+            "type": "Sniper Rifle",
+            "stats": "4700\t255\t150\t120\tN/A\t0.6\t5.13\t3.7\t5",
+            "image": "https://static.wikia.nocookie.net/valorant/images/1/17/Operator.png/revision/latest/scale-to-width-down/200?cb=20220306002302"
+        },
+        "Ares": {
+            "type": "Machine Gun",
+            "stats": "1600\t72/67\t30/28\t25/23\t30m\t10-13\t5.13\t3.25\t50",
+            "image": "https://static.wikia.nocookie.net/valorant/images/0/05/Ares.png/revision/latest/scale-to-width-down/200?cb=20220306002039"
+        },
+        "Odin": {
+            "type": "Machine Gun",
+            "stats": "3200\t95/77\t38/31\t32/26\t30m\t12-15.6\t5.13\t5\t100",
+            "image": "https://static.wikia.nocookie.net/valorant/images/5/58/Odin.png/revision/latest/scale-to-width-down/200?cb=20220306002249"
+        }
+    },
+    "strats": {
+        "sites": ["A SITE", "B SITE", "C SITE/MID"],
+        "buys": ["FULL BUY", "LIGHT BUY", "SAVE"],
+        "plays": ["PLAY FOR PICKS", "WATCH ANGLES", "RUSH SITE", "PLAY CONTACT", "PLAY DEFAULT", "HELP A TEAMMATE", "IGNORE HELP", "DON'T STOP MOVING", "SURRENDER", "PERISH"]
+    }
+}
